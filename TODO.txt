@@ -1,0 +1,10 @@
+- Found a very cool library called SimpleWebRTC! Going to leverage this abstraction of WebRTC https://github.com/andyet/SimpleWebRTC THIS RESOURCE IS AMAZING!
+  - Looks to be built on socket.io for signaling, server is very simple, which is nice
+- Need to figure out a way to have persistence, probably a document DB like mongo
+- cool ideas:
+  - mute video (I think this is just overriding the original MediaStream constraints (simpleWebRTC might not let me though, in which case I'll need to edit the library))
+  - share screen (no idea how to do this as of now)
+  - send invites to rooms via email
+    - need a smtp mail lib
+  - use a messaging queue to send out batch notifications on activity to iOS and Android users
+  - use Electron to make this a desktop app
