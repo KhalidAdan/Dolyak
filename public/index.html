@@ -5,13 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="scripts/semantic-ui-css/semantic.min.css">
+  <link rel="stylesheet" href="css/main.css" type="text/css">
   <title>Yak!</title>
-  <style>
-    html { margin-top: 20px; }
-    #chat-content { height: 180px;  overflow-y: scroll; }
-    .bg-black { background-color: black; margin: 5px; height: 100px;}
-    .hide { display: none;}
-  </style>
 </head>
 <body>
 
@@ -46,6 +41,14 @@
         <h4 class="ui center aligned header" style="margin:0;">
           Local Camera
         </h4>
+        <div class="ui two buttons mrgn-bttm">
+          <button class="ui button brdr-rght" id="pauseVideo">Hide Video</button>
+          <button class="ui button brdr-lft" id="playVideo">Show Video</button>
+        </div>
+        <div class="ui two buttons mrgn-tp">
+          <button class="ui button brdr-rght" id="mute">Mute</button>
+          <button class="ui button brdr-lft" id="unmute">unmute</button>
+        </div>
       </div>
     </div>
 
@@ -62,6 +65,7 @@
       </div>
     </div>
   </div>
+
 
   <!-- TEMPLATES -->
   <!-- Remote Video Template -->

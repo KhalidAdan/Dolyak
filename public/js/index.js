@@ -36,7 +36,7 @@ window.addEventListener('load', () => {
   })
 
   // we have to wait until it's ready
-  webrtc.on('readyToCall', function () {
+  webrtc.on('readyToCall', () => {
       var roomName = 'Yak'
       console.log(`Joining Room: ${roomName}`)
       webrtc.joinRoom(roomName)
@@ -45,7 +45,7 @@ window.addEventListener('load', () => {
   })
 
   // Display Chat Interface
-  const showChatRoom = function (room)  {
+  const showChatRoom = (room) => {
     $('#post-btn').on('click', () => {
       const message = $('#post-message').val()
       postMessage(message)
@@ -119,6 +119,22 @@ window.addEventListener('load', () => {
       const id = webrtc.getDomId(peer)
       $(`#${id}`).empty()
       remoteVideosCount -= 1
+    })
+
+    $("#pauseVideo").on('click', () => {
+      webrtc.pauseVideo()
+    })
+
+    $("#playVideo").on('click', () => {
+      webrtc.resumeVideo()
+    })
+
+    $("#mute").on('click', () => {
+      webrtc.mute()
+    })
+
+    $("#unmute").on('click', () => {
+      webrtc.unmute()
     })
 
 
