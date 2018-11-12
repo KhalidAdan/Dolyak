@@ -1,4 +1,4 @@
-window.addEventListener('load', () => {
+window.addEventListener('load', () => { 
   // Chat platform
   const chatTemplate = Handlebars.compile($('#chat-template').html())
   const chatContentTemplate = Handlebars.compile($('#chat-content-template').html())
