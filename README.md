@@ -1,3 +1,3 @@
-# Dolyak!
+# Yak!
 
-Working on a WebRTC chat server, hopefully going to create something cool!
+Working on a WebRTC chat app, hopefully going to create something cool!
