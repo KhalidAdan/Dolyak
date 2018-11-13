@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -13,8 +13,8 @@
   <div class="ui">
     <h1 class="ui header">Yak!</h1>
     <div class="ui two column stackable grid">
-      <div class="ui ten wide column">
-        <div class="ui segment">
+      <div class="ui vertical menu no-padding four wide column">
+        <div class="ui segment chat-container">
 
           <!-- Chat Room Form -->
           <h3 class="ui orange header"><strong> Yakkity Yak!</strong></h3>
@@ -35,18 +35,20 @@
       </div>
 
       <!-- Local Camera -->
-      <div class="ui six wide column">
+      <div class="ui twelve wide column anchor-to-bottom">
         <video id="local-video" class="ui large image"  autoplay></video>
         <h4 class="ui center aligned header" style="margin:0;">
           Local Camera
         </h4>
-        <div class="ui two buttons mrgn-bttm">
-          <button class="ui button brdr-rght" id="pauseVideo">Hide Video</button>
-          <button class="ui button brdr-lft" id="playVideo">Show Video</button>
-        </div>
-        <div class="ui two buttons mrgn-tp">
-          <button class="ui button brdr-rght" id="mute">Mute</button>
-          <button class="ui button brdr-lft" id="unmute">unmute</button>
+        <div class="bttm">
+          <div class="ui two buttons mrgn-bttm">
+            <button class="ui button brdr-rght" id="pauseVideo">Hide Video</button>
+            <button class="ui button brdr-lft" id="playVideo">Show Video</button>
+          </div>
+          <div class="ui two buttons mrgn-tp">
+            <button class="ui button brdr-rght" id="mute">Mute</button>
+            <button class="ui button brdr-lft" id="unmute">unmute</button>
+          </div>
         </div>
       </div>
     </div>

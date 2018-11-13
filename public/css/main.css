@@ -1,10 +1,22 @@
+/* Main styles*/
 html { margin-top: 20px; }
-#chat-content { height: 180px;  overflow-y: scroll; }
-.bg-black { background-color: black; height: 100px; border: 1px solid #fff; }
+.chat-container { height:1000px; }
+#chat-content { height: 770px;  overflow-y: scroll; }
+.segment {   margin-left: 0px !important; border: 0px !important; }
+.vertical { width: auto !important; }
+.no-padding { padding-left: 0px !important; padding-right: 0px !important; }
+.anchor-to-bottom { position: relative; }
+.bttm { position: absolute; bottom: 0px; min-width: 100%; }
+video {
+  height: 100%;
+  width: 100%;
+}
+/*MISCELLANEOUS*/
 .hide { display: none;}
 .mrgn-tp { margin-top: 5px !important; }
 .mrgn-bttm { margin-bttm: 5px !important; }
 .brdr-lft { border-left: 1px solid #fff !important; }
 .brdr-rght { border-right: 1px solid #fff !important; }
 .bg-gray { background-color: #505660;}
-.mn-hght { min-height: 900px;} 
+.bg-black { background-color: #000;}
+.mn-hght { min-height: 900px;}
