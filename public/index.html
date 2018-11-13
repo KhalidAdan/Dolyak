@@ -12,7 +12,7 @@
 
   <div class="ui bg-gray">
     <h1 class="ui header">Yak!</h1>
-    <div class="ui two column stackable grid">
+    <div class="ui two column stackable grid hgt">
       <div class="ui vertical menu no-padding four wide column">
         <div class="ui segment chat-container">
 
@@ -36,10 +36,7 @@
 
       <!-- Local Camera -->
       <div class="ui twelve wide column anchor-to-bottom">
-        <video id="local-video" autoplay style="top:50%; left:50%; transform: translate(-50%,-50%);"></video>
-        <h4 class="ui center aligned header" style="margin:0;">
-          Local Camera
-        </h4>
+        <video id="local-video" autoplay></video>
         <div class="bttm">
           <div class="ui two buttons mrgn-bttm">
             <button class="ui button brdr-rght" id="pauseVideo">Hide Video</button>
@@ -53,18 +50,20 @@
       </div>
     </div>
 
-    <!-- Remote Cameras -->
-    <h3 class="ui center aligned header">Remote Cameras</h3>
-    <div id="remote-videos" class="ui stackable grid">
-      <div class="four wide column bg-black">
-      </div>
-      <div class="four wide column bg-black">
-      </div>
-      <div class="four wide column bg-black">
-      </div>
-      <div class="four wide column bg-black">
+    <div class="rm-cameras">
+      <!-- Remote Cameras -->
+      <div id="remote-videos" class="ui stackable grid">
+        <div class="four wide column hgt">
+        </div>
+        <div class="four wide column hgt">
+        </div>
+        <div class="four wide column hgt">
+        </div>
+        <div class="four wide column hgt">
+        </div>
       </div>
     </div>
+
   </div>
 
 

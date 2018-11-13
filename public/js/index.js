@@ -13,7 +13,6 @@ window.addEventListener('load', () => {
   let username = user[3]
 
   // Local Video
-  const localImageEl = $('#local-image')
   const localVideoEl = $('#local-video')
 
   // Remote Videos
@@ -95,7 +94,6 @@ window.addEventListener('load', () => {
 
     // We got access to local camera
     webrtc.on('localStream', () => {
-      localImageEl.hide()
       localVideoEl.show()
     })
 
