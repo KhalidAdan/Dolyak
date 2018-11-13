@@ -7,10 +7,7 @@ html { margin-top: 20px; }
 .no-padding { padding-left: 0px !important; padding-right: 0px !important; }
 .anchor-to-bottom { position: relative; }
 .bttm { position: absolute; bottom: 0px; min-width: 100%; }
-video {
-  height: 100%;
-  width: 100%;
-}
+
 /*MISCELLANEOUS*/
 .hide { display: none;}
 .mrgn-tp { margin-top: 5px !important; }

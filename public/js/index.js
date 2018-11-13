@@ -1,10 +1,12 @@
-window.addEventListener('load', () => { 
+window.addEventListener('load', () => {
   // Chat platform
   const chatTemplate = Handlebars.compile($('#chat-template').html())
   const chatContentTemplate = Handlebars.compile($('#chat-content-template').html())
   const chatEl = $('#chat')
   const formEl = $('.form')
   const messages = []
+  const w = 1280;
+  const h = 720;
 
   var url = window.location.href
   user = url.split("/")
@@ -33,6 +35,13 @@ window.addEventListener('load', () => {
     debug: false,
     detectSpeakingEvents: true,
     autoAdjustMic: false,
+    media: {
+      audio: false,
+      video: {
+        width: { ideal: w },
+        height: { ideal: h },
+      }
+    }
   })
 
   // we have to wait until it's ready
