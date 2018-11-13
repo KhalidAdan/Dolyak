@@ -35,6 +35,7 @@ window.addEventListener('load', () => {
     debug: false,
     detectSpeakingEvents: true,
     autoAdjustMic: false,
+    // this is going to need ot be set programmatically. It's possible that the simpleWebRTC class will need ot be overhauled.
     media: {
       audio: false,
       video: {
