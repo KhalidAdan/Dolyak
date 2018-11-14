@@ -2,10 +2,11 @@ body { height:100%; }
 html { height:100%; }
 video { height: 100%; width: 100%; }
 textarea { width:100%; }
+#chat-content { height:85%; }
 .pure-vmenu-width{
 width: 100%;
 display: inline-block;
-background-color: #086466;
+background-color: gray;
 height:100%;
 }
 .hgt { height:100%; }

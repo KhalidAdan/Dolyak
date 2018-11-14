@@ -9,104 +9,93 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <title>Yak!</title>
   </head>
-
   <body>
-      <div class="pure-g hgt">
-              <div class="pure-u-1-5 hgt">
-                  <div class="l-box hgt">
-                    <div class="pure-menu pure-vmenu-width">
-                      <h1 class="text-align-center">Yak!</h1>
 
-                        <h3 class="header-line"><strong> Yakkity Yak!</strong></h3>
-                        <div id="chat-content" class="border-bot"></div>
-                        <div class="ui form">
-                          <div class="ui field">
-                            <label>Post Message</label>
-                            <textarea id="post-message" name="post-message" rows="1"></textarea>
-                          </div>
-                          <div id="post-btn" class="ui primary submit button">Send</div>
-                        </div>
-
-
-                        <div id="chat"></div>
-
-                    </div>
-                   </div>
-              </div>
-
-              <div class="pure-u-4-5">
-                  <div class="l-box">
-                      <video id="local-video" autoplay></video>
-
-                      <div class="pure-button-group video-controls" role="group" aria-label="...">
-                        <button class="pure-button" id="pauseVideo">Hide Video</button>
-                        <button class="pure-button" id="playVideo">Show Video</button>
-                        <button class="pure-button" id="mute">Mute</button>
-                        <button class="pure-button" id="unmute">Unmute</button>
-                      </div>
-
-                   </div>
-
-                   <div class="rm-cameras">
-
-                     <div id="remote-videos" class="pure-g">
-                       <div class="pure-u-6-24">
-                       </div>
-                       <div class="pure-u-6-24">
-                       </div>
-                       <div class="pure-u-6-24">
-                       </div>
-                       <div class="pure-u-6-24">
-                       </div>
-                     </div>
-                   </div>
-
-                 </div>
-              </div>
-        </div>
-
-  <script id="remote-video-template" type="text/x-handlebars-template">
-    <div id="{{ id }}" class="four wide column bg-black">
-      <img class="ui centered medium image" src="images/image.png">
-    </div>
-  </script>
-
-  <!-- Chat Content Template -->
-  <script id="chat-content-template" type="text/x-handlebars-template">
-   {{#each messages}}
-      <div class="content">
-        <div class="summary">
-          <div class="pure-g">
-              <div class="pure-u-3-4">
-                  <i class="fas fa-user-ninja"></i>
-                  <a href="#"> {{ username }}</a> posted on {{ postedOn }}
-                  <div class="extra text">
-                    {{ message }}
+    <div class="pure-g hgt">
+      <div class="pure-u-1-5 hgt">
+        <div class="l-box hgt">
+          <div class="pure-menu pure-vmenu-width">
+            <h1 class="text-align-center">Yak!</h1>
+              <div id="chat-content"></div>
+              <div class="ui form">
+                <div class="pure-g pure-form">
+                  <div class="wid80" style="width: 80%;float: left;">
+                    <textarea id="post-message" name="post-message" rows="2" placeholder="send message..."></textarea>
                   </div>
+                  <div class="wid20" style="width:20%; float: right;">
+                    <div id="post-btn" class="pure-button" style="width: 100%; height:100%"><i class="fas fa-plus fa-3x"></i></div>
+                  </div>
+                </div>
+              </div>
+              <div id="chat">
               </div>
           </div>
+         </div>
       </div>
-    </div>
-    <br>
-  {{/each}}
-  </script>
-
-  <!-- Chat Template -->
-  <script id="chat-template" type="text/x-handlebars-template">
-    <div id="chat-content" class="ui feed"> </div>
-    <div class="border-top">
-      <div class="ui field">
-        <label>Post Message</label>
-        <textarea id="post-message" name="post-message" rows="1"></textarea>
+      <div class="pure-u-4-5">
+          <div class="l-box">
+              <video id="local-video" autoplay></video>
+              <div class="pure-button-group video-controls" role="group" aria-label="...">
+                <button class="pure-button" id="pauseVideo">Hide Video</button>
+                <button class="pure-button" id="playVideo">Show Video</button>
+                <button class="pure-button" id="mute">Mute</button>
+                <button class="pure-button" id="unmute">Unmute</button>
+              </div>
+           </div>
+           <div class="rm-cameras">
+             <div id="remote-videos" class="pure-g">
+               <div class="pure-u-6-24">
+               </div>
+               <div class="pure-u-6-24">
+               </div>
+               <div class="pure-u-6-24">
+               </div>
+               <div class="pure-u-6-24">
+               </div>
+             </div>
+           </div>
+         </div>
       </div>
-      <button id="post-btn" class="ui primary submit button">Send</button>
-    </div>
-  </script>
 
-  <!-- Scripts -->
-  <script src="scripts/jquery/dist/jquery.min.js"></script>
-  <script src="scripts/handlebars/dist/handlebars.min.js "></script>
-  <script src="scripts/simplewebrtc/out/simplewebrtc-with-adapter.bundle.js"></script>
-  <script src="js/index.js"></script>
-</body>
-</html>
+    <script id="remote-video-template" type="text/x-handlebars-template">
+      <div id="{{ id }}" class="four wide column bg-black">
+        <img class="ui centered medium image" src="images/image.png">
+      </div>
+    </script>
+
+    <script id="chat-content-template" type="text/x-handlebars-template">
+     {{#each messages}}
+        <div class="content">
+          <div class="summary">
+            <div class="pure-g">
+                <div class="pure-u-3-4">
+                    <i class="fas fa-user-ninja"></i>
+                    <a href="#"> {{ username }}</a> posted on {{ postedOn }}
+                    <div class="extra text">
+                      {{ message }}
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <br>
+    {{/each}}
+    </script>
+
+    <script id="chat-template" type="text/x-handlebars-template">
+      <div id="chat-content" class="ui feed"> </div>
+      <div class="border-top">
+        <div class="ui field">
+          <label>Post Message</label>
+          <textarea id="post-message" name="post-message" rows="1"></textarea>
+        </div>
+        <button id="post-btn" class="ui primary submit button">Send</button>
+      </div>
+    </script>
+
+    <script src="scripts/jquery/dist/jquery.min.js"></script>
+    <script src="scripts/handlebars/dist/handlebars.min.js "></script>
+    <script src="scripts/simplewebrtc/out/simplewebrtc-with-adapter.bundle.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+  </html>
