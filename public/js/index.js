@@ -118,7 +118,7 @@ window.addEventListener('load', () => {
         remoteVideosEl.append(html)
       }
       $(`#${id}`).html(video)
-      $(`#${id} video`).addClass('ui image medium') // Make video element responsive
+      // $(`#${id} video`).addClass('ui image medium') // semantic ui is removed
       remoteVideosCount += 1
     })
 
