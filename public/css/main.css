@@ -1,0 +1,17 @@
+body { height:100%; }
+html { height:100%; }
+video { height: 100%; width: 100%; }
+textarea { width:100%; }
+.pure-vmenu-width{
+width: 100%;
+display: inline-block;
+background-color: #086466;
+height:100%;
+}
+.hgt { height:100%; }
+.header-line { border-bottom: 1px solid black;}
+.border-bot { border-bottom: 1px solid black}
+.text-align-center { text-align: center; color: white; }
+.video-controls { bottom: 50px; position: relative;}
+.anchor-to-bottom { position: relative; }
+.bttm { position: absolute; bottom: 0px; min-width: 100%; }
