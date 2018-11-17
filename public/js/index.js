@@ -146,3 +146,7 @@ window.addEventListener('load', () => {
     })
 
 })
+
+function toggleChat() {
+  $('#chat-id').toggleClass('chat-hidden');
+}

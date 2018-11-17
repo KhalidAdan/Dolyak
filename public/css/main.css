@@ -6,7 +6,7 @@ textarea { width:100%; }
 .pure-vmenu-width{
 width: 100%;
 display: inline-block;
-background-color: gray;
+background-color: #215fc4;
 height:100%;
 }
 .hgt { height:100%; }
@@ -16,3 +16,4 @@ height:100%;
 .video-controls { bottom: 50px; position: relative;}
 .anchor-to-bottom { position: relative; }
 .bttm { position: absolute; bottom: 0px; min-width: 100%; }
+.chat-hidden { width: 20%; left: -20%; position: absolute; }
