@@ -11,7 +11,7 @@
   </head>
   <body>
 
-    <div class="row hgt">
+    <div class="row hgt" style="background-color: black;">
       <div class="col-md-3 col-xs-0" style="background-color: #215fc4;" id="chat-id">
         <h3 class="center">Yak!</h3>
         <div id="chat-content"></div>
@@ -30,14 +30,13 @@
           <i class="fa fa-comment-dots fa-stack-1x fa-inverse"></i>
         </span>
         <div class="row hgt">
-          <div class="col-md-12" style="border: 1px solid black;">
-            <video id="remote-video" autoplay></video>
+          <div class="col-md-12" id="remote-video" style="border: 1px solid black;">
             <div class="btn-group btn-group-toggle bot-left" data-toggle="buttons">
               <label class="btn btn-secondary active">
-                <input type="radio" name="options" id="pauseVideo" autocomplete="off" checked> Hide Screen
+                <input type="radio" class="playing" name="options" id="togglePlayback" autocomplete="off" checked> Hide Screen
               </label>
               <label class="btn btn-secondary">
-                <input type="radio" name="options" id="mute" autocomplete="off"> Mute
+                <input type="radio" class="audioplaying" name="options" id="toggleMute" autocomplete="off"> Mute
               </label>
             </div>
           </div>
@@ -51,7 +50,6 @@
 
     <script id="remote-video-template" type="text/x-handlebars-template">
       <div id="{{ id }}" class="four wide column bg-black">
-        <img class="ui centered medium image" src="images/image.png">
       </div>
     </script>
 

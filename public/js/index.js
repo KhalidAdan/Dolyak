@@ -17,7 +17,7 @@ window.addEventListener('load', () => {
 
   // Remote Videos
   const remoteVideoTemplate = Handlebars.compile($('#remote-video-template').html())
-  const remoteVideosEl = $('#remote-videos')
+  const remoteVideosEl = $('#remote-video')
   let remoteVideosCount = 0
 
   // Hide cameras until they are initialized
@@ -28,7 +28,7 @@ window.addEventListener('load', () => {
     // the id/element dom element that will hold "our" video
     localVideoEl: 'local-video',
     // the id/element dom element that will hold remote videos
-    remoteVideosEl: 'remote-videos',
+    remoteVideosEl: 'remote-video',
     // immediately ask for camera access
     autoRequestMedia: true,
     debug: false,
@@ -108,6 +108,8 @@ window.addEventListener('load', () => {
 
     // Remote video was added
     webrtc.on('videoAdded', (video, peer) => {
+      if (remoteVideosCount < 1)
+        return false;
       // eslint-disable-next-line no-console
       const id = webrtc.getDomId(peer)
       console.log(id)
@@ -129,22 +131,26 @@ window.addEventListener('load', () => {
       remoteVideosCount -= 1
     })
 
-    $("#pauseVideo").on('click', () => {
-      webrtc.pauseVideo()
+    $("#togglePlayback").on('click', () => {
+      if ($(".playing").length) {
+        webrtc.pauseVideo()
+        $("#togglePlayback").removeClass("playing")
+      }
+      else {
+        webrtc.resumeVideo()
+        $("#togglePlayback").addClass("playing")
+      }
     })
 
-    $("#playVideo").on('click', () => {
-      webrtc.resumeVideo()
+    $("#toggleMute").on('click', () => {
+      if ($(".audioplaying").length) {
+          webrtc.mute()
+          $("#toggleMute").removeClass("audioplaying")
+      } else {
+        webrtc.unmute()
+        $("#toggleMute").addClass("audioplaying")
+      }
     })
-
-    $("#mute").on('click', () => {
-      webrtc.mute()
-    })
-
-    $("#unmute").on('click', () => {
-      webrtc.unmute()
-    })
-
 })
 
 function toggleChat() {
