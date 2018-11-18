@@ -154,5 +154,6 @@ window.addEventListener('load', () => {
 })
 
 function toggleChat() {
-  $('#chat-id').toggleClass('chat-hidden');
+  $('#chat-id').toggleClass('chat-hidden')
+  $('#video-content').toggleClass('content');
 }

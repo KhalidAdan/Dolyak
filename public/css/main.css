@@ -1,15 +1,46 @@
 html { height: 100%; }
 body { height: 100%; }
-video { position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 100;
-    background-size: cover;
-    overflow: hidden; }
+video {
+  position: absolute;
+  width: inherit;
+  z-index: 100;
+  background-size: cover;
+  overflow: hidden;
+}
+#video-content.content {
+  margin-left: 25% !important;
+  transition: 0.5s;
+}
+#video-content {
+  transition: 0.5s;
+}
+#remote-video video { height: 100%; width: 100%; }
 .bot-left { top: 90%; }
 .hgt { height: 100%; }
 .hgt2 { height: 50%; }
 .center { text-align: center; color: white;}
-.chat-hidden { left: -25%; position: absolute; }
+.chat-hidden { width:0 !important; }
+#chat-id {
+  height: 100%; /* 100% Full-height */
+  position: fixed; /* Stay in place */
+  z-index: 101; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  width: 25%;
+  background-color: #215fc4; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+.videoinsert {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  background-size: cover;
+  overflow: hidden;
+}
