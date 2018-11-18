@@ -1,4 +1,99 @@
+
 <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Yak!</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <div class="row hgt">
+      <div class="col-md-3 col-xs-0" style="background-color: #215fc4;" id="chat-id">
+        <h3 class="center">Yak!</h3>
+        <div id="chat-content"></div>
+        <div class="form-group" style="position: fixed; bottom: 0; width:25%; padding-right: 10px;">
+          <div class="input-group">
+            <input id="post-message" type="text" class="form-control" placeholder="Send message..." aria-label="Recipient's username" aria-describedby="post-btn">
+            <div class="input-group-append">
+              <button class="input-group-text"  id="post-btn">Send</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-9 col-xs-12" style="height: 100%;">
+        <span class="fa-stack fa-lg" onclick="event.preventDefault(); toggleChat();" style="position: fixed; z-index:1000;">
+          <i class="fas fa-square fa-stack-2x" style="color: #215fc4;"></i>
+          <i class="fa fa-comment-dots fa-stack-1x fa-inverse"></i>
+        </span>
+        <div class="row hgt">
+          <div class="col-md-12" style="border: 1px solid black;">
+            <video id="remote-video" autoplay></video>
+            <div class="btn-group btn-group-toggle bot-left" data-toggle="buttons">
+              <label class="btn btn-secondary active">
+                <input type="radio" name="options" id="pauseVideo" autocomplete="off" checked> Hide Screen
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="options" id="mute" autocomplete="off"> Mute
+              </label>
+            </div>
+          </div>
+          <div class="col-md-12" style="border: 1px solid black;">
+            <video id="local-video" autoplay></video>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script id="remote-video-template" type="text/x-handlebars-template">
+      <div id="{{ id }}" class="four wide column bg-black">
+        <img class="ui centered medium image" src="images/image.png">
+      </div>
+    </script>
+
+    <script id="chat-content-template" type="text/x-handlebars-template">
+     {{#each messages}}
+        <div class="content">
+          <div class="summary">
+            <div class="pure-g">
+                <div class="pure-u-3-4">
+                    <i class="fas fa-user-ninja"></i>
+                    <a href="#"> {{ username }}</a> posted on {{ postedOn }}
+                    <div class="extra text">
+                      {{ message }}
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <br>
+    {{/each}}
+    </script>
+
+    <script id="chat-template" type="text/x-handlebars-template">
+      <div id="chat-content" class="ui feed"> </div>
+      <div class="border-top">
+        <div class="ui field">
+          <label>Post Message</label>
+          <textarea id="post-message" name="post-message" rows="1"></textarea>
+        </div>
+        <button id="post-btn" class="ui primary submit button">Send</button>
+      </div>
+    </script>
+
+    <script src="js/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="scripts/jquery/dist/jquery.min.js"></script>
+    <script src="scripts/handlebars/dist/handlebars.min.js "></script>
+    <script src="scripts/simplewebrtc/out/simplewebrtc-with-adapter.bundle.js"></script>
+  </body>
+</html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -102,4 +197,4 @@
     <script src="scripts/simplewebrtc/out/simplewebrtc-with-adapter.bundle.js"></script>
     <script src="js/index.js"></script>
   </body>
-  </html>
+  </html> -->

@@ -1,19 +1,17 @@
-body { height:100%; }
-html { height:100%; }
-video { height: 100%; width: 100%; }
-textarea { width:100%; }
-#chat-content { height:85%; }
-.pure-vmenu-width{
-width: 100%;
-display: inline-block;
-background-color: #215fc4;
-height:100%;
-}
-.hgt { height:100%; }
-.header-line { border-bottom: 1px solid black;}
-.border-bot { border-bottom: 1px solid black}
-.text-align-center { text-align: center; color: white; }
-.video-controls { bottom: 50px; position: relative;}
-.anchor-to-bottom { position: relative; }
-.bttm { position: absolute; bottom: 0px; min-width: 100%; }
-.chat-hidden { width: 20%; left: -20%; position: absolute; }
+html { height: 100%; }
+body { height: 100%; }
+video { position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    background-size: cover;
+    overflow: hidden; }
+.bot-left { top: 90%; }
+.hgt { height: 100%; }
+.hgt2 { height: 50%; }
+.center { text-align: center; color: white;}
+.chat-hidden { left: -25%; position: absolute; }
