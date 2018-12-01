@@ -1,5 +1,5 @@
 html { height: 100%; }
-body { height: 100%; }
+body { height: 100%; background: #444753; }
 video {
   position: absolute;
   width: inherit;
@@ -14,6 +14,7 @@ video {
 #video-content {
   transition: 0.5s;
 }
+.pull-right { float:right; }
 #remote-video video { height: 100%; width: 100%; }
 .bot-left { top: 90%; }
 .hgt { height: 100%; }
@@ -21,16 +22,21 @@ video {
 .center { text-align: center; color: white;}
 .chat-hidden { width:0 !important; }
 #chat-id {
-  height: 100%; /* 100% Full-height */
-  position: fixed; /* Stay in place */
-  z-index: 101; /* Stay on top */
-  top: 0; /* Stay at the top */
+  height: 100%;
+  position: fixed;
+  z-index: 101;
+  top: 0;
   left: 0;
   width: 25%;
-  background-color: #215fc4; /* Black*/
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  background-color: #F2F5F8;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+nav { background-color: #F2F5F8; border-bottom: 1px solid white;}
+#chat-content {
+  padding:15px;
+  height: 83% !important;
+  overflow-y: scroll;
 }
 .videoinsert {
   position: absolute;
@@ -43,4 +49,30 @@ video {
   z-index: -100;
   background-size: cover;
   overflow: hidden;
+}
+textarea {
+  resize: none;
+  margin: 20px 0px 20px 20px;
+  width: 97% !important;
+}
+#message-area {
+  border-top: 1px solid white;
+  background-color: #F2F5F8;
+  margin-bottom: 0 !important;
+  padding-bottom: 20px;
+}
+div.local-message-content {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  background: #86BB71;
+  width: 70%;
+  float: left;
+}
+div.remote-message-content {
+  padding: 10px;
+  border-radius: 5px;
+  background: #94C2ED;
+  width: 70%;
+  float: right;
 }

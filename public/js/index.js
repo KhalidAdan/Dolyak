@@ -34,9 +34,8 @@ window.addEventListener('load', () => {
     debug: false,
     detectSpeakingEvents: true,
     autoAdjustMic: false,
-    // this is going to need ot be set programmatically. It's possible that the simpleWebRTC class will need ot be overhauled.
     media: {
-      audio: false,
+      audio: true,
       video: {
         width: { ideal: w },
         height: { ideal: h },
@@ -71,7 +70,7 @@ window.addEventListener('load', () => {
     const chatMessage = {
       username,
       message,
-      postedOn: new Date().toLocaleString('en-GB'),
+      postedOn: new Date().toLocaleTimeString('en-GB'),
     }
     // Send to all peers
     webrtc.sendToAll('chat', chatMessage)
@@ -83,9 +82,11 @@ window.addEventListener('load', () => {
 
   // Update Chat Messages
   const updateChatMessages = () => {
-    const html = chatContentTemplate({ messages })
+    var newMsg = messages[messages.length - 1]
+    console.log(newMsg)
+    const html = chatContentTemplate({ newMsg })
     const chatContentEl = $('#chat-content')
-    chatContentEl.html(html)
+    chatContentEl.append(html)
     // automatically scroll downwards
     const scrollHeight = chatContentEl.prop('scrollHeight')
     chatContentEl.animate({ scrollTop: scrollHeight }, 'slow')
@@ -120,7 +121,7 @@ window.addEventListener('load', () => {
         remoteVideosEl.append(html)
       }
       $(`#${id}`).html(video)
-      // $(`#${id} video`).addClass('ui image medium') // semantic ui is removed
+
       remoteVideosCount += 1
     })
 
