@@ -1,12 +1,15 @@
 window.addEventListener('load', () => {
   // Chat platform
   const chatTemplate = Handlebars.compile($('#chat-template').html())
-  const chatContentTemplate = Handlebars.compile($('#chat-content-template').html())
+  const localChatContentTemplate = Handlebars.compile($('#local-chat-content-template').html())
+  const remoteChatContentTemplate = Handlebars.compile($('#remote-chat-content-template').html())
   const chatEl = $('#chat')
   const formEl = $('.form')
   const messages = []
-  const w = 1280;
-  const h = 720;
+  const w = 1280
+  const h = 720
+  const localUser = 1
+  const remoteUser = 2
 
   var url = window.location.href
   user = url.split("/")
@@ -35,7 +38,7 @@ window.addEventListener('load', () => {
     detectSpeakingEvents: true,
     autoAdjustMic: false,
     media: {
-      audio: true,
+      audio: false,
       video: {
         width: { ideal: w },
         height: { ideal: h },
@@ -77,14 +80,20 @@ window.addEventListener('load', () => {
     // Update messages locally
     messages.push(chatMessage)
     $('#post-message').val('')
-    updateChatMessages()
+    updateChatMessages(localUser)
   }
 
   // Update Chat Messages
-  const updateChatMessages = () => {
+  const updateChatMessages = (sentFrom) => {
     var newMsg = messages[messages.length - 1]
+    var html
     console.log(newMsg)
-    const html = chatContentTemplate({ newMsg })
+    //check local or remote
+    if (sentFrom === 1) {
+      html = localChatContentTemplate({ newMsg })
+    } else {
+      html = remoteChatContentTemplate({ newMsg })
+    }
     const chatContentEl = $('#chat-content')
     chatContentEl.append(html)
     // automatically scroll downwards
@@ -103,7 +112,7 @@ window.addEventListener('load', () => {
       if (data.type === 'chat') {
         const message = data.payload
         messages.push(message)
-        updateChatMessages()
+        updateChatMessages(remoteUser)
       }
     })
 
@@ -156,5 +165,6 @@ window.addEventListener('load', () => {
 
 function toggleChat() {
   $('#chat-id').toggleClass('chat-hidden')
+  $('.toggleChatVisibility').toggleClass('hideme')
   $('#video-content').toggleClass('content');
 }

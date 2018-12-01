@@ -21,6 +21,7 @@ video {
 .hgt2 { height: 50%; }
 .center { text-align: center; color: white;}
 .chat-hidden { width:0 !important; }
+.hideme { display: none; transition: 0.1s;}
 #chat-id {
   height: 100%;
   position: fixed;
@@ -66,13 +67,17 @@ div.local-message-content {
   margin: 10px;
   border-radius: 5px;
   background: #86BB71;
-  width: 70%;
+  width: 70% !important;
   float: left;
+  box-shadow: 2px 2px 4px #888;
+  border: 2px solid #666;
 }
 div.remote-message-content {
   padding: 10px;
   border-radius: 5px;
   background: #94C2ED;
-  width: 70%;
+  width: 70% !important;
   float: right;
+  box-shadow: 2px 2px 4px #888;
+  border: 2px solid #666;
 }
