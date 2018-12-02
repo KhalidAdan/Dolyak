@@ -38,7 +38,7 @@ window.addEventListener('load', () => {
     detectSpeakingEvents: true,
     autoAdjustMic: false,
     media: {
-      audio: false,
+      audio: true,
       video: {
         width: { ideal: w },
         height: { ideal: h },

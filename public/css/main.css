@@ -1,5 +1,5 @@
 html { height: 100%; }
-body { height: 100%; background: #444753; }
+body { height: 100%; background: #444753; overflow-x: hidden; }
 video {
   position: absolute;
   width: inherit;
@@ -36,7 +36,7 @@ video {
 nav { background-color: #F2F5F8; border-bottom: 1px solid white;}
 #chat-content {
   padding:15px;
-  height: 83% !important;
+  height: 1100px;
   overflow-y: scroll;
 }
 .videoinsert {
