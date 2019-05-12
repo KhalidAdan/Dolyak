@@ -25,8 +25,8 @@
   "dependencies": {
     "engine.io-client": "^3.3.0",
     "express": "^4.16.4",
-    "handlebars": "^4.0.12",
-    "jquery": "^3.3.1",
+    "handlebars": "^4.1.2",
+    "jquery": "^3.4.1",
     "purecss": "^1.0.0",
     "semantic-ui-css": "^2.4.1",
     "simplewebrtc": "^3.0.2",
